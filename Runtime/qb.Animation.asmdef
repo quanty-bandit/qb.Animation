@@ -1,0 +1,16 @@
+{
+    "name": "qb.Animation",
+    "rootNamespace": "",
+    "references": [
+        "GUID:3a61d50eb2789944892c7e6dec768114"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
