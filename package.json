@@ -5,7 +5,7 @@
   "description": "Animation components",
   "unity": "6000.2",
   "dependencies": {
-    "com.quanty-bandit.qb.pattern": "https://github.com/quanty-bandit/qb.Pattern.git"
+    "com.quanty-bandit.qb.pattern": "https://github.com/quanty-bandit/qb.Pattern.git#1.0.0"
   },
   "keywords": [
     "Animation"
