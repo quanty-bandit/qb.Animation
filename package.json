@@ -4,7 +4,7 @@
   "displayName": "qb.Animation",
   "description": "Animation components",
   "unity": "6000.2",
-  "dependencies": {
+  "gitDependencies": {
     "com.codewriter.triinspector": "https://github.com/codewriter-packages/Tri-Inspector.git",
     "com.quanty-bandit.qb.pattern": "https://github.com/quanty-bandit/qb.Pattern.git"
   },
