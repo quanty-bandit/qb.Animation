@@ -5,8 +5,8 @@
   "description": "Animation components",
   "unity": "6000.2",
   "dependencies": {
-    "com.codewriter.triinspector": "git://github.com/codewriter-packages/Tri-Inspector.git",
-    "com.quanty-bandit.qb.pattern": "git://github.com/quanty-bandit/qb.Pattern.git"
+    "com.codewriter.triinspector": "git+https://github.com/codewriter-packages/Tri-Inspector.git",
+    "com.quanty-bandit.qb.pattern": "git+https://github.com/quanty-bandit/qb.Pattern.git"
   },
   "keywords": [
     "Animation"
