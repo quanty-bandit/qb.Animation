@@ -1,11 +1,11 @@
 {
-  "name": "com.quanty-bandit.qb.Animation",
+  "name": "com.quanty-bandit.qb.animation",
   "version": "1.0.0",
   "displayName": "qb.Animation",
   "description": "Animation components",
   "unity": "6000.2",
   "dependencies": {
-    "com.quanty-bandit.qb.Pattern": "1.0.0"
+    "com.quanty-bandit.qb.pattern": "https://github.com/quanty-bandit/qb.Pattern.git"
   },
   "keywords": [
     "Animation"
