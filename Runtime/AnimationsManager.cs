@@ -3,6 +3,10 @@ using qb.Pattern;
 using System.Collections.Generic;
 namespace qb.Animation
 {
+    /// <summary>
+    /// This Monobehaviour singleton class is used to manage 
+    /// IUpdatabe object update loop cycle
+    /// </summary>
     public class AnimationsManager : MBSingleton<AnimationsManager>
     {
         public override bool IsPersistent => true;
@@ -18,6 +22,13 @@ namespace qb.Animation
         static HashSet<IUpdatable> timeUnscaledToAdd = new HashSet<IUpdatable>();
 
         static object locker = new object();
+        /// <summary>
+        /// Register the specified IUpdatable object to be manage by the Behaviour Update loop 
+        /// </summary>
+        /// <param name="updatable">
+        /// The updatable object to be updated by the update cycle.
+        /// Cannot be null.
+        /// </param>
         public static void Register(IUpdatable updatable)
         {
             lock (locker)
@@ -46,6 +57,17 @@ namespace qb.Animation
                 }
             }
         }
+        /// <summary>
+        /// Unregisters the specified updatable object so that it is no longer updated by the update manager.
+        /// </summary>
+        /// <remarks>
+        /// If the specified object is not currently registered, this method has no effect.
+        /// This method is thread-safe.
+        /// </remarks>
+        /// <param name="updatable">
+        /// The updatable object to remove from the update cycle.
+        /// Cannot be null.
+        /// </param>
         public static void Unregister(IUpdatable updatable)
         {
             lock (locker)
@@ -68,18 +90,24 @@ namespace qb.Animation
             lock (locker)
             {
                 #region add animations
-                foreach (var item in timeScaledToAdd)
+                if(timeScaledToAdd.Count > 0)
                 {
-                    if (!timeScaled.Contains(item))
-                        timeScaled.Add(item);
+                    foreach (var item in timeScaledToAdd)
+                    {
+                        if (!timeScaled.Contains(item))
+                            timeScaled.Add(item);
+                    }
+                    timeScaledToAdd.Clear();
                 }
-                timeScaledToAdd.Clear();
-                foreach (var item in timeUnscaledToAdd)
+                if(timeUnscaledToAdd.Count > 0)
                 {
-                    if (!timeUnscaled.Contains(item))
-                        timeUnscaled.Remove(item);
+                    foreach (var item in timeUnscaledToAdd)
+                    {
+                        if (!timeUnscaled.Contains(item))
+                            timeUnscaled.Add(item);
+                    }
+                    timeUnscaledToAdd.Clear();
                 }
-                timeUnscaledToAdd.Clear();
                 #endregion
 
                 #region remove animations
@@ -109,5 +137,6 @@ namespace qb.Animation
                 #endregion
             }
         }
+
     }
 }
