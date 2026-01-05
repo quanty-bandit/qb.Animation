@@ -40,7 +40,7 @@ namespace qb.Animation
 #if !NO_DEBUG_LOG_WARNING
                     else
                     {
-                        Debug.LogWarning("[AnimationManager.Register] The updatable is already registered!");
+                        Debug.LogWarning("[UpdatableManager.Register] The updatable is already registered!");
                     }
 #endif
                 }
@@ -51,7 +51,7 @@ namespace qb.Animation
 #if !NO_DEBUG_LOG_WARNING
                     else
                     {
-                        Debug.LogWarning("[AnimationManager.Register] The updatable is already registered!");
+                        Debug.LogWarning("[UpdatableManager.Register] The updatable is already registered!");
                     }
 #endif
                 }
