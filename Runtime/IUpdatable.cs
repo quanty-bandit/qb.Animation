@@ -1,4 +1,3 @@
-using UnityEngine;
 namespace qb.Animation
 {
     public interface IUpdatable

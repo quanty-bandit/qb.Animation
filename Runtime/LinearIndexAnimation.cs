@@ -2,6 +2,18 @@ using System;
 using UnityEngine;
 namespace qb.Animation
 {
+    /// <summary>
+    /// Provides frame-based index animation with configurable delays, looping, and play modes. Supports linear and yoyo
+    /// playback, and can be updated over time to advance the animation index.
+    /// </summary>
+    /// <remarks>
+    /// Use this class to animate an integer index over a sequence of frames, where each frame can
+    /// have a custom delay. The animation can be played, stopped, rewound, and updated via the Update method. Looping
+    /// and playback mode (linear or yoyo) are configurable. The animation can optionally respect a global time scale.
+    /// Subscribe to the OnUpdate event to receive notifications when the index changes.
+    /// This class must be disposed to
+    /// unregister from the animation manager and release resources.
+    /// </remarks>
     public class LinearIndexAnimation:IDisposable, IUpdatable
     {
         float[] delays;
@@ -146,7 +158,7 @@ namespace qb.Animation
                 {
                     duration += entry;
                 }
-                AnimationsManager.Register(this);
+                UpdatableManager.Register(this);
             }
         }
         ~LinearIndexAnimation()
@@ -155,7 +167,7 @@ namespace qb.Animation
         }
         public void Dispose()
         {
-            AnimationsManager.Unregister(this);
+            UpdatableManager.Unregister(this);
         }
 
         public void Play()

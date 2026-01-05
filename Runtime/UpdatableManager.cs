@@ -5,9 +5,9 @@ namespace qb.Animation
 {
     /// <summary>
     /// This Monobehaviour singleton class is used to manage 
-    /// IUpdatabe object update loop cycle
+    /// IUpdatable object update loop cycle
     /// </summary>
-    public class AnimationsManager : MBSingleton<AnimationsManager>
+    public class UpdatableManager : MBSingleton<UpdatableManager>
     {
         public override bool IsPersistent => true;
         public override EDuplicatedSingletonInstanceAction DuplicatedInstanceAction => EDuplicatedSingletonInstanceAction.DestroyInstance;
